@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
 function TodoList() {
-  const [todos, setTodos] = useState([]);
+  const defaultTodos = JSON.parse(localStorage.getItem("todos"));
+  const [todos, setTodos] = useState(defaultTodos ? defaultTodos : []);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   //if the user does not type any letter it will not show up as well as if the user type many spaces between the letters.
   const addTodo = (todo) => {
@@ -40,7 +45,7 @@ function TodoList() {
 
   return (
     <div>
-      <h1>What's the plan for today?</h1>
+      <h1>Better write than forget😉</h1>
       <TodoForm onSubmit={addTodo} />
       <Todo
         todos={todos}

@@ -28,27 +28,27 @@ function TodoForm(props) {
         <>
           <input
             type="text"
-            placeholder="Add a todo"
+            placeholder="🖊"
             value={input}
             name="text"
             className="todo-input edit"
             onChange={handleChange}
             ref={inputRef}
           />
-          <button className="todo-button edit">Add todo</button>
+          <button className="todo-button edit">update the todo</button>
         </>
       ) : (
         <>
           <input
             type="text"
-            placeholder="Add a todo"
+            placeholder="📝"
             value={input}
             name="text"
             className="todo-input"
             onChange={handleChange}
             ref={inputRef}
           />
-          <button className="todo-button">Add todo</button>
+          <button className="todo-button">Add a todo</button>
         </>
       )}
     </form>
