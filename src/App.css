@@ -12,8 +12,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 520px;
-  min-height: 520px;
+  max-width: 500px;
+  min-height: 90vh;
   background: #e7e7de;
   text-align: center;
   margin: 50px auto;
@@ -32,13 +32,12 @@ h1 {
 }
 
 .todo-input {
-  padding: 14px 32px 14px 16px;
+  flex-grow: 1;
+  padding: 14px 5px 14px 16px;
   border-radius: 4px 0 0 4px;
   border: 2px solid #7b9473;
   outline: none;
-  width: 320px;
   background: transparent;
-  margin: 15px 0;
 }
 
 .todo-input::placeholder {
@@ -59,6 +58,14 @@ h1 {
   color: #fff;
   text-transform: capitalize;
 }
+.formWrapper {
+  width: 90%;
+  margin: 15px auto;
+}
+
+.form {
+  display: flex;
+}
 
 .todo-input.edit {
   border: 2px solid #045762;
@@ -77,6 +84,7 @@ h1 {
 
 .todo-row {
   display: flex;
+  word-break: break-all;
   justify-content: space-between;
   align-items: center;
   margin: 4px auto;
@@ -120,6 +128,7 @@ h1 {
   display: flex;
   align-items: center;
   font-size: 24px;
+  margin-left: 10px;
   cursor: pointer;
 }
 
